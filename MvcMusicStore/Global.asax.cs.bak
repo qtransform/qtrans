@@ -1,14 +1,19 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+
+using Microsoft.AspNetCore.Routing;
+
+using Microsoft.AspNetCore.Http;
+
+using System.Threading.Tasks;
+
 
 namespace MvcMusicStore
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
-    public class MvcApplication : System.Web.HttpApplication
-    {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    public class MvcApplication     {
+RequestDelegate _next = null;        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
         }
@@ -34,5 +39,5 @@ namespace MvcMusicStore
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
-    }
+publicMvcApplication(RequestDelegatenext){}    }
 }

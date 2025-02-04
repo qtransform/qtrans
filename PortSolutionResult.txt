@@ -1,0 +1,695 @@
+==========
+References
+==========
+MvcMusicStore.Controllers
+MvcMusicStore.Models
+System.Web.Security
+System
+<global namespace>
+System.Collections.Generic
+MvcMusicStore.ViewModels
+MvcMusicStore
+System.Web
+System.Web.Routing
+System.ComponentModel.DataAnnotations
+System.ComponentModel
+System.Linq
+System.Security.Principal
+System.Reflection
+System.Runtime.InteropServices
+System.Web.Mvc
+System.Data.Entity
+project.all
+
+===============
+DownloadedFiles
+===============
+project.all.json
+system.data.entity.json
+system.web.mvc.json
+system.web.routing.json
+system.web.json
+
+==============
+ProjectResults
+==============
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/MvcMusicStore.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+Modernizr,->2.8.3
+jQuery.Validation,->1.19.5
+jQuery.UI.Combined,->1.13.0
+EntityFramework,->6.5.1
+jQuery,->3.7.0
+---------------------------
+Action packages:
+---------------------------
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/HomeController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/CheckoutController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/StoreController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: Project
+---------------------------
+
+Action Type: Project
+Action Name: ArchiveFiles
+Action Value: BundleConfig.cs,FilterConfig.cs,RouteConfig.cs,WebApiConfig.cs,global.asax.cs,global.asax,AssemblyInfo.cs,packages.config
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: MigrateConfig
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ProjectFile
+Action Name: MigrateProjectFile
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/Album.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/AccountModels.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/ShoppingCart.cs
+---------------------------
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: HttpContext
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/AccountController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/ShoppingCartController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Global.asax.cs
+---------------------------
+
+Action Type: Class
+Action Name: RemoveBaseClass
+Action Value: IHttpHandler
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: AddExpression
+Action Value: RequestDelegate_next=null;
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: CreateConstructor
+Action Value: {"types":"RequestDelegate","identifiers":"next"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: ChangeMethodName
+Action Value: {"existingMethodName":"ProcessRequest","newMethodName":"Invoke"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 1
+
+Action Type: Class
+Action Name: ReplaceMethodModifiers
+Action Value: {"methodName":"Invoke","modifiers":"publicasync"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 1
+
+Action Type: Class
+Action Name: ChangeMethodToReturnTaskType
+Action Value: Invoke
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: System.Threading.Tasks
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/Order.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+
+----------------------
+Showing results for: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/MvcMusicStore.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net8.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+Modernizr,->2.8.3
+jQuery.Validation,->1.19.5
+jQuery.UI.Combined,->1.13.0
+EntityFramework,->6.5.1
+jQuery,->3.7.0
+---------------------------
+Action packages:
+---------------------------
+Microsoft.AspNetCore.SystemWebAdapters,1.4.0
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/HomeController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/CheckoutController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/StoreController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: Project
+---------------------------
+
+Action Type: Project
+Action Name: ArchiveFiles
+Action Value: BundleConfig.cs,FilterConfig.cs,RouteConfig.cs,WebApiConfig.cs,global.asax.cs,global.asax,AssemblyInfo.cs,packages.config
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Project
+Action Name: MigrateConfig
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: ProjectFile
+Action Name: MigrateProjectFile
+Action Value: 
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/Album.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/AccountModels.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/ShoppingCart.cs
+---------------------------
+
+Action Type: Identifier
+Action Name: ReplaceIdentifier
+Action Value: HttpContext
+Times Run: 2
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/AccountController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Controllers/ShoppingCartController.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Global.asax.cs
+---------------------------
+
+Action Type: Class
+Action Name: RemoveBaseClass
+Action Value: IHttpHandler
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: AddExpression
+Action Value: RequestDelegate_next=null;
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: CreateConstructor
+Action Value: {"types":"RequestDelegate","identifiers":"next"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Class
+Action Name: ChangeMethodName
+Action Value: {"existingMethodName":"ProcessRequest","newMethodName":"Invoke"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 1
+
+Action Type: Class
+Action Name: ReplaceMethodModifiers
+Action Value: {"methodName":"Invoke","modifiers":"publicasync"}
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 1
+
+Action Type: Class
+Action Name: ChangeMethodToReturnTaskType
+Action Value: Invoke
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Routing
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Http
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: System.Threading.Tasks
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+---------------------------
+Executed Actions for file: /tmp/tempfspartition/QnetTransformArtifacts/MidTransformCode/sourceCode/MvcMusicStore/Models/Order.cs
+---------------------------
+
+Action Type: Using
+Action Name: AddDirective
+Action Value: Microsoft.AspNetCore.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+Action Type: Using
+Action Name: RemoveDirective
+Action Value: System.Web.Mvc
+Times Run: 1
+Executions With Error: 0
+Invalid Executions: 0
+
+
+
+===========
+BuildErrors
+===========
+
+

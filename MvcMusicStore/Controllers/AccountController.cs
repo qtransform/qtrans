@@ -1,7 +1,8 @@
-﻿using MvcMusicStore.Models;
+using MvcMusicStore.Models;
 using System;
-using System.Web.Mvc;
 using System.Web.Security;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace MvcMusicStore.Controllers
 {
