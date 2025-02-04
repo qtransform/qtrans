@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MvcMusicStore.Models
 {
-    [Bind(Exclude = "AlbumId")]
+    [Bind("GenreId,ArtistId,Title,Price,AlbumArtUrl")]
     public class Album
     {
         [ScaffoldColumn(false)]
