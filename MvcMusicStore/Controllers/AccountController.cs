@@ -1,21 +1,13 @@
 using MvcMusicStore.Models;
 using System;
+using System.Web.Security;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
+
 
 namespace MvcMusicStore.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
-
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
-        {
-            _userManager = userManager;
-            _signInManager = signInManager;
-        }
 
         private void MigrateShoppingCart(string UserName)
         {
@@ -23,30 +15,30 @@ namespace MvcMusicStore.Controllers
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             cart.MigrateCart(UserName);
-            HttpContext.Session.SetString(ShoppingCart.CartSessionKey, UserName);
+            Session[ShoppingCart.CartSessionKey] = UserName;
         }
 
         //
-        // GET: /Account/Login
+        // GET: /Account/LogOn
 
-        public IActionResult Login()
+        public ActionResult LogOn()
         {
             return View();
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Account/LogOn
 
         [HttpPost]
-        public async Task<IActionResult> Login(LogOnModel model, string returnUrl)
+        public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
-                if (result.Succeeded)
+                if (Membership.ValidateUser(model.UserName, model.Password))
                 {
                     MigrateShoppingCart(model.UserName);
 
+                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -59,7 +51,7 @@ namespace MvcMusicStore.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
             }
 
@@ -68,20 +60,21 @@ namespace MvcMusicStore.Controllers
         }
 
         //
-        // GET: /Account/Logout
+        // GET: /Account/LogOff
 
-        public async Task<IActionResult> Logout()
+        public ActionResult LogOff()
         {
-            await _signInManager.SignOutAsync();
-            HttpContext.Session.Clear();
+            FormsAuthentication.SignOut();
 
-            return RedirectToAction("Login", "Account");
+            Session.Abandon();
+
+            return RedirectToAction("Logon", "Account");
         }
 
         //
         // GET: /Account/Register
 
-        public IActionResult Register()
+        public ActionResult Register()
         {
             return View();
         }
@@ -90,22 +83,24 @@ namespace MvcMusicStore.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterModel model)
+        public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = model.UserName, Email = model.Email };
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                // Attempt to register the user
+                MembershipCreateStatus createStatus;
+                Membership.CreateUser(model.UserName, model.Password, model.Email, "question", "answer", true, null, out createStatus);
+
+                if (createStatus == MembershipCreateStatus.Success)
                 {
                     MigrateShoppingCart(model.UserName);
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
-                foreach (var error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
                 }
             }
 
@@ -117,7 +112,7 @@ namespace MvcMusicStore.Controllers
         // GET: /Account/ChangePassword
 
         [Authorize]
-        public IActionResult ChangePassword()
+        public ActionResult ChangePassword()
         {
             return View();
         }
@@ -127,25 +122,31 @@ namespace MvcMusicStore.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
+        public ActionResult ChangePassword(ChangePasswordModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.GetUserAsync(User);
-                if (user == null)
+
+                // ChangePassword will throw an exception rather
+                // than return false in certain failure scenarios.
+                bool changePasswordSucceeded;
+                try
                 {
-                    return RedirectToAction("Login");
+                    MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
+                    changePasswordSucceeded = currentUser.ChangePassword(model.OldPassword, model.NewPassword);
+                }
+                catch (Exception)
+                {
+                    changePasswordSucceeded = false;
                 }
 
-                var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-                if (result.Succeeded)
+                if (changePasswordSucceeded)
                 {
-                    await _signInManager.RefreshSignInAsync(user);
                     return RedirectToAction("ChangePasswordSuccess");
                 }
-                foreach (var error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
                 }
             }
 
@@ -156,9 +157,49 @@ namespace MvcMusicStore.Controllers
         //
         // GET: /Account/ChangePasswordSuccess
 
-        public IActionResult ChangePasswordSuccess()
+        public ActionResult ChangePasswordSuccess()
         {
             return View();
         }
+
+        #region Status Codes
+        private static string ErrorCodeToString(MembershipCreateStatus createStatus)
+        {
+            // See http://go.microsoft.com/fwlink/?LinkID=177550 for
+            // a full list of status codes.
+            switch (createStatus)
+            {
+                case MembershipCreateStatus.DuplicateUserName:
+                    return "User name already exists. Please enter a different user name.";
+
+                case MembershipCreateStatus.DuplicateEmail:
+                    return "A user name for that e-mail address already exists. Please enter a different e-mail address.";
+
+                case MembershipCreateStatus.InvalidPassword:
+                    return "The password provided is invalid. Please enter a valid password value.";
+
+                case MembershipCreateStatus.InvalidEmail:
+                    return "The e-mail address provided is invalid. Please check the value and try again.";
+
+                case MembershipCreateStatus.InvalidAnswer:
+                    return "The password retrieval answer provided is invalid. Please check the value and try again.";
+
+                case MembershipCreateStatus.InvalidQuestion:
+                    return "The password retrieval question provided is invalid. Please check the value and try again.";
+
+                case MembershipCreateStatus.InvalidUserName:
+                    return "The user name provided is invalid. Please check the value and try again.";
+
+                case MembershipCreateStatus.ProviderError:
+                    return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+
+                case MembershipCreateStatus.UserRejected:
+                    return "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+
+                default:
+                    return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+            }
+        }
+        #endregion
     }
 }
