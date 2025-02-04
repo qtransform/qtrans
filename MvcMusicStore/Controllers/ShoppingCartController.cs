@@ -80,13 +80,14 @@ namespace MvcMusicStore.Controllers
         //
         // GET: /ShoppingCart/CartSummary
 
-        public IViewComponentResult Invoke()
+        [ChildActionOnly]
+        public ActionResult CartSummary()
         {
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             ViewData["CartCount"] = cart.GetCount();
 
-            return View("CartSummary");
+            return PartialView("CartSummary");
         }
     }
 }
